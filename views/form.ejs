@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <h1>Please give us some information about you</h1>
+    <form method="POST" action="/form">
+       <% for( var i = 0; i < form.length ; i++) { %>
+            <div class="form-group">
+                <h5><%=i+1%>. <%=form[i]%></h5>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question_<%=i+1%>" value="Agree" checked> Agree
+                     </label>
+                </div>
+                <div class="form-check form-check-inline">
+                     <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question_<%=i+1%>" value="Neutral"> Neutral
+                      </label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question_<%=i+1%>" value="Disagree"> Disagree
+                      </label>
+                </div>
+            </div>
+            <hr>
+            
+          <%  } %>
+          <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    
+</div>
+
+
+
+<% include ./partials/footer %>

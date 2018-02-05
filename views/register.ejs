@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+
+
+<div class="container">
+    <h1>Sign Up Page</h1>
+    <form method="POST" action="/register">
+        <div class="form-group">
+            <input name="username" class="form-control" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input name="password" class="form-control" placeholder="Password" type="password">
+        </div>
+              <div class="form-group">
+    <label for="ageInput">Your Age?</label>
+    <select name="age" class="form-control" id="ageInput">
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+      <option>21</option>
+      <option>22</option>
+      <option>23</option>
+      <option>24</option>
+      <option>25</option>
+      <option>26</option>
+      <option>27</option>
+      <option>28</option>
+      <option>29</option>
+      <option>30</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="sex">You are...</label>
+    <select name="sex" id="sex" class="form-control" type="text">
+      <option>Heterosexual Male</option>
+      <option>Homosexual Male</option>
+      <option>Bisexual Male</option>
+      <option>Heterosexual Female</option>
+      <option>Homosexual Female</option>
+      <option>Bisexual Female</option>
+    </select>
+  </div>
+        <input class="form-control btn btn-primary" type="submit">
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>

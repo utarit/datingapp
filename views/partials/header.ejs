@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="<%= typeof pageName !== 'undefined' && pageName === 'index' ? 'index.css' : 'main.css' %>">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg <%= typeof pageName !== 'undefined' && pageName === 'index' ? 'navbar-dark bg-dark' : 'navbar-light bg-light' %>">
+  <a class="navbar-brand" href="/">DatingApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if(!currentUser) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Sign Up</a>
+      </li>
+     <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/<%=currentUser._id%>">My Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+       <% } %>
+    </ul>
+    <% if(currentUser) { %>
+    <span class="navbar-text">
+      Welcome <%=currentUser.username%>
+    </span>
+    <% } %>
+  </div>
+</nav>
+
+
